@@ -191,7 +191,7 @@ static void hap_submit_counter (const char *svname, const char *pxname, const ch
 	vl.values = values;
 	vl.values_len = len;
 	vl.time = time(NULL);
-	snprintf(vl.host, sizeof(vl.host), hostname_g);
+	snprintf(vl.host, sizeof(vl.host), "%s", hostname_g);
 	snprintf(vl.plugin, sizeof(vl.plugin), "haproxy");
 	snprintf(vl.type_instance, sizeof (vl.type_instance), "%s-%s", svname, pxname);
 	sstrncpy(vl.type, type, sizeof(vl.type));
@@ -231,7 +231,7 @@ static void hap_submit_gauge (const char *svname, const char *pxname, const char
 	vl.values = values;
 	vl.values_len = len;
 	vl.time = time(NULL);
-	snprintf(vl.host, sizeof(vl.host), hostname_g);
+	snprintf(vl.host, sizeof(vl.host), "%s", hostname_g);
 	snprintf(vl.plugin, sizeof(vl.plugin), "haproxy");
 	snprintf(vl.type_instance, sizeof (vl.type_instance), "%s-%s", svname, pxname);
 	sstrncpy(vl.type, type, sizeof(vl.type));
